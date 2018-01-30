@@ -1,6 +1,6 @@
 package main;
 
-public class goForward {
+public class Car {
 
 	public int getSpeed() {
 		// TODO Auto-generated method stub

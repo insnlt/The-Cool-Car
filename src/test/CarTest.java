@@ -4,15 +4,15 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import main.goForward;
+import main.Car;
 
 
-public class goForwardTest {
-	private goForward forward;
+public class CarTest {
+	private Car forward;
 
     @Before
     public void setUp() {
-        forward = new goForward();
+        forward = new Car();
     }
 
 	@Test
