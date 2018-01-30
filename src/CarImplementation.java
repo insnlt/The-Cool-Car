@@ -6,7 +6,7 @@ public class CarImplementation implements CarInterface{
     }
 
     @Override
-    public boolean leftLaneDetet() {
+    public boolean leftLaneDetect() {
         return false;
     }
 
