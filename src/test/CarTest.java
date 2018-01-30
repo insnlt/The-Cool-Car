@@ -22,4 +22,10 @@ public class CarTest {
         int actualSpeed = forward.getSpeed();
         Assert.assertEquals(expectedSpeed, actualSpeed);
     }
+	
+	public void testForwardTwice() {
+		int ex =0;
+		int detected = forward.getSpeed();
+		
+	}
 }
