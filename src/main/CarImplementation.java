@@ -1,12 +1,18 @@
+package main;
+
 public class CarImplementation implements CarInterface{
 
     @Override
-    public void moveForward() {
-
+    public int moveForward(int position) {
+        if(position >= 96){
+            return position;
+        } else {
+            return position + 5;
+        }
     }
 
     @Override
-    public boolean leftLaneDetet() {
+    public boolean leftLaneDetect() {
         return false;
     }
 

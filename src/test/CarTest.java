@@ -1,5 +1,6 @@
 package test;
 
+import main.CarImplementation;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,24 +9,22 @@ import main.Car;
 
 
 public class CarTest {
-	private Car forward;
+	private CarImplementation car;
 
     @Before
     public void setUp() {
-        forward = new Car();
+        car = new CarImplementation();
     }
 
 	@Test
-	public void testForward() {
-//        account = new AccountImpl("testId", "testOwner");
-        int expectedSpeed = 5;
-        int actualSpeed = forward.getSpeed();
-        Assert.assertEquals(expectedSpeed, actualSpeed);
+    public void testMoveForwardInRange() {
+        int newPosition = car.moveForward(0);
+        Assert.assertEquals(5, newPosition);
     }
-	
-	public void testForwardTwice() {
-		int ex =0;
-		int detected = forward.getSpeed();
-		
-	}
+    @Test
+    public void testMoveForwardOutsideRange(){
+        int newPosition = car.moveForward(96);
+        Assert.assertEquals(96, newPosition);
+    }
+
 }

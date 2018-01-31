@@ -2,9 +2,11 @@ package main;
 
 public class Car {
 
-	public int getSpeed() {
-		// TODO Auto-generated method stub
-		return 5;
-	}
-	
+    public int moveForward(int position) {
+        if(position >= 96){
+            return position;
+        } else {
+            return position + 5;
+        }
+    }
 }

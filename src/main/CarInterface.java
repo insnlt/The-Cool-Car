@@ -1,3 +1,5 @@
+package main;
+
 public interface CarInterface {
     /**
      Description: This method moves the car by 5 metres for each call until the end of the street is reached.
@@ -5,14 +7,14 @@ public interface CarInterface {
      Post-condition: The car has moved 5 metres ahead.
      Test-cases: NONE :P
      */
-    void moveForward();
+    int moveForward(int position);
     /**
      Description: This method detects an empty left lane using sensor data.
      Pre-condition: At least 2 out of 4 sensors should input an integer value from the range between 0-50 metres.
      Post-condition: The method indicates whether the lane is empty or not. In other cases an error message is returned.
      Test-cases: AGAIN NONE :P
      */
-    boolean leftLaneDetet();
+    boolean leftLaneDetect();
     /**
      Description: This method moves the car to the left lane and 5 metres forward if the method leftLaneDetect indicates that the lane is empty,
      otherwise the car moves 5 metres forward.
