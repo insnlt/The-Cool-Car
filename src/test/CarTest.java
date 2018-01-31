@@ -36,11 +36,11 @@ public class CarTest {
     
     @Test
     public void testMostLeft(){
-    	int position= car.whereIs()[1];
-    	Assert.assertEquals(3, position);
+    	Assert.assertEquals(3, car.whereIs()[1]);
     }
     
     @Test
+    //TC13
     public void testOnStreet(){
     	int positionCarforw = car.whereIs()[0]; 
     	int positionCarlan = car.whereIs()[1];
@@ -51,6 +51,7 @@ public class CarTest {
     }
     
     @Test
+    //TC14
     public void testNotStreet(){
     	int positionCarforw = car.whereIs()[0]; 
     	int positionCarlan = car.whereIs()[1];
