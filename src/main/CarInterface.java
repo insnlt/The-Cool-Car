@@ -29,5 +29,5 @@ public interface CarInterface {
      Post-condition: Returns current position of the car.
      Test-cases:
      */
-    void whereIs(); // change the return type
+    int[] whereIs(); // change the return type
 }
