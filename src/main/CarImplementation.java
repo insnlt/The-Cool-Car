@@ -1,18 +1,23 @@
 package main;
 
 public class CarImplementation implements CarInterface{
-
+  //  private int position;
+    private CarPosition carPosition;
+    public CarImplementation() {
+        carPosition = new CarPosition();
+    }
     @Override
-    public int moveForward(int position) {
-        if(position >= 96){
-            return position;
+    public int moveForward() {
+        if(this.carPosition.getPosition() >=96 || this.carPosition.getPosition() < 0){
+            return this.carPosition.getPosition();
         } else {
-            return position + 5;
+            carPosition.move();
+            return this.carPosition.getPosition();
         }
     }
 
     @Override
-    public boolean leftLaneDetect() {
+    public boolean leftLaneDetect(int sensorData){
         return false;
     }
 
@@ -24,5 +29,13 @@ public class CarImplementation implements CarInterface{
     @Override
     public void whereIs() {
 
+    }
+
+    public CarPosition getPosition() {
+        return this.carPosition;
+    }
+
+    public int getCarPosition(){
+        return this.carPosition.streetPosition;
     }
 }

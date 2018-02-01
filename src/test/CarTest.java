@@ -5,7 +5,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import main.Car;
 
 
 public class CarTest {
@@ -18,13 +17,20 @@ public class CarTest {
 
 	@Test
     public void testMoveForwardInRange() {
-        int newPosition = car.moveForward(0);
-        Assert.assertEquals(5, newPosition);
+        car.getPosition().setPosition(0);
+        car.moveForward();
+        Assert.assertEquals(5,car.getCarPosition());
     }
     @Test
     public void testMoveForwardOutsideRange(){
-        int newPosition = car.moveForward(96);
-        Assert.assertEquals(96, newPosition);
+        car.getPosition().setPosition(96);
+        car.moveForward();
+        Assert.assertEquals(96,car.getCarPosition());
+    }
+
+    @Test
+    public void testNoSensorWorking(){
+
     }
 
 }
