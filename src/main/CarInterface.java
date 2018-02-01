@@ -4,6 +4,7 @@ public interface CarInterface {
 
     class CarPosition{
         public int streetPosition;
+        public int [] sensorData = new int[4];
 
         public int getPosition(){
             return this.streetPosition;
@@ -13,6 +14,35 @@ public interface CarInterface {
         }
         public void move(){
             this.streetPosition = this.streetPosition + 5 ;
+        }
+        public void setSensorData(int data[]){
+            for(int i = 0 ; i < sensorData.length ; i++){
+                sensorData[i] = data[i];
+            }
+        }
+        public int[] getSensorData(){
+            return this.sensorData;
+        }
+    }
+
+    class QueryResult{
+        public int workingCounter;
+        public boolean queryOutput;
+
+        public int getWorkingCounter(){
+            return this.workingCounter;
+        }
+
+        public boolean getQueryOutput(){
+            return this.queryOutput;
+        }
+
+        public void setQueryOutput(boolean queryOutput) {
+            this.queryOutput = queryOutput;
+        }
+
+        public void setWorkingCounter(int workingCounter) {
+            this.workingCounter = workingCounter;
         }
     }
 
@@ -29,7 +59,7 @@ public interface CarInterface {
      Post-condition: The method indicates whether the lane is empty or not. In other cases an error message is returned.
      Test-cases: AGAIN NONE :P
      */
-    boolean leftLaneDetect(int sensorData);
+    boolean leftLaneDetect();
     /**
      Description: This method moves the car to the left lane and 5 metres forward if the method leftLaneDetect indicates that the lane is empty,
      otherwise the car moves 5 metres forward.
