@@ -5,10 +5,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 1bf64549cf879a9fa37320428f7a2b7d3b669daf
 
 public class CarTest {
 	private CarImplementation car;
