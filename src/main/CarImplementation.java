@@ -23,13 +23,20 @@ public class CarImplementation implements CarInterface{
 
     @Override
     public int changeLane() {
-        return 0;
+    	
+        return 1;
     }
 
     @Override
-    public void whereIs() {
-
+    public int[] whereIs() {
+    	int road = (int) Math.floor(Math.random()* 101);
+    	int lane = (int) Math.floor(Math.random()* 3)+1;
+    	int[] random = new int[2];
+    	random[0] = road;
+    	random[1] = lane;
+		return random;
     }
+<<<<<<< HEAD
 
     public CarPosition getPosition() {
         return this.carPosition;
@@ -38,4 +45,7 @@ public class CarImplementation implements CarInterface{
     public int getCarPosition(){
         return this.carPosition.streetPosition;
     }
+=======
+    
+>>>>>>> 1bf64549cf879a9fa37320428f7a2b7d3b669daf
 }
