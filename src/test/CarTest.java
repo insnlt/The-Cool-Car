@@ -4,6 +4,7 @@ import main.CarImplementation;
 import main.CarInterface;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.theories.suppliers.TestedOn;
 
@@ -31,54 +32,88 @@ public class CarTest {
         Assert.assertEquals(96,car.getCar());
     }
     //TC2
+    @Ignore
     @Test
     public void testNoSensorWorking(){
         int [] arr = {-1,-1,-1,-1};
         car.getPosition().setSensorData(arr);
-        Assert.assertEquals(false,car.leftLaneDetect());
+        //Assert.assertEquals(false,car.leftLaneDetect());
     }
     //TC3
+    @Ignore
     @Test
     public void testSensorWorkingOutsideRange(){
         //more than 5 meter range
         int [] arr = {9,-1,-1,-1};
         car.getPosition().setSensorData(arr);
-        Assert.assertEquals(false,car.leftLaneDetect());
+        //Assert.assertEquals(false,car.leftLaneDetect());
     }
     //TC4
+    @Ignore
     @Test
     public void testSensorWorkingInsideRange1(){
         int [] arr = {4,-1,-1,-1};
         car.getPosition().setSensorData(arr);
-        Assert.assertEquals(true,car.leftLaneDetect());
+        //Assert.assertEquals(true,car.leftLaneDetect());
     }
     //TC5
+    @Ignore
     @Test
     public void testSensorWorkingInsideRange2(){
         int [] arr = {4,3,2,-1};
         car.getPosition().setSensorData(arr);
-        Assert.assertEquals(true, car.leftLaneDetect());
+        //Assert.assertEquals(true, car.leftLaneDetect());
     }
     //TC6
+    @Ignore
     @Test
     public void testTwoOrMoreSensorWorkingOutsideRange(){
         int [] arr = {14,11,-1,-1};
         car.getPosition().setSensorData(arr);
-        Assert.assertEquals(false,car.leftLaneDetect());
+        //Assert.assertEquals(false,car.leftLaneDetect());
     }
+
     //TC7
     @Test
-    public void testQueriesMatch(){
-        int [] arr1 = {14,11,-1,-1};
+    public void testQueriesMatchAsTrue(){
+        int [] arr1 = {5,14,-1,-1}; //for throwing exception
         int [] arr2 = {1,3,9,-1};
-        car.getPosition().setSensorData(arr1);
-        car.getPosition().setSensorData(arr2);
-
+        //car.getPosition().setSensorData(arr1);
+        //car.getPosition().setSensorData(arr2);
         //car.getResult().
 
-        Assert.assertEquals(false,car.leftLaneDetect());
+        Assert.assertEquals(true,car.leftLaneDetect(arr1, arr2));
     }
 
+    //TC8
+    @Test
+    public void testQueriesMatchAsFalse(){
+        int [] arr1 = {14,14,-1,-1}; //for throwing exception
+        int [] arr2 = {12,13,19,-1};
+        //car.getPosition().setSensorData(arr1);
+        //car.getPosition().setSensorData(arr2);
+        //car.getResult().
+
+        Assert.assertEquals(false,car.leftLaneDetect(arr1, arr2));
+    }
+
+    //TC9
+    @Test
+    public void testQueriesMatchAsException(){
+        int [] arr1 = {14,14,-1,-1}; //for throwing exception
+        int [] arr2 = {1,3,9,-1};
+        //car.getPosition().setSensorData(arr1);
+        //car.getPosition().setSensorData(arr2);
+        //car.getResult().
+        try{
+            car.leftLaneDetect(arr1, arr2);
+            Assert.fail("IllegalStateException expected");
+        }
+        catch (java.lang.IllegalStateException e){
+            //expected
+        }
+        //Assert.assertEquals(true,car.leftLaneDetect(arr1, arr2));
+    }
 
     @Test
     public void testNotMostLeft(){
