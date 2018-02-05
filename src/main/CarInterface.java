@@ -59,7 +59,7 @@ public interface CarInterface {
      Post-condition: The method indicates whether the lane is empty or not. In other cases an error message is returned.
      Test-cases: AGAIN NONE :P
      */
-    boolean leftLaneDetect(int[] arr1, int[] arr2);
+    boolean leftLaneDetect(int[] arr1, int[] arr2) throws DetectException;
     /**
      Description: This method moves the car to the left lane and 5 metres forward if the method leftLaneDetect indicates that the lane is empty,
      otherwise the car moves 5 metres forward.
