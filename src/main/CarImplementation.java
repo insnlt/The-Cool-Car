@@ -18,7 +18,7 @@ public class CarImplementation implements CarInterface{
     }
 
     @Override
-    public boolean leftLaneDetect(int[] arr1, int[] arr2){
+    public boolean leftLaneDetect(int[] arr1, int[] arr2) throws DetectException{
        QueryResult q1 = checkQuery(arr1);
        QueryResult q2 = checkQuery(arr2);
        int res1 = q1.getWorkingCounter();
@@ -31,10 +31,12 @@ public class CarImplementation implements CarInterface{
            return true;
        } else if(bool1 == bool2 && !bool1 && res1 >= 2 && res2 >=2) {    // if both queries have at least 2 sensors input nothing in range(0-5)
            return false;
+       } else if (res1 == 0 && res2 == 0) {
+           throw new DetectException("No sensor working");
+       } else if(res1 < 2 || res2 < 2){
+           throw new DetectException("Only one of the sensors is working");
        } else {
-           throw new
-                   java.lang.IllegalStateException();
-           //System.out.println("ERROR MESSAGE");
+           throw new DetectException("Queries didn't match");
        }
        //return false;
     }
