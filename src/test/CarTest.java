@@ -115,23 +115,71 @@ public class CarTest {
         //Assert.assertEquals(true,car.leftLaneDetect(arr1, arr2));
     }
 
+    //TC10
     @Test
     public void testNotMostLeft(){
-    	//int newPosition = car.changeLane();
-    	//int newPosition= car.whereIs()[1];
-    //	Assert.assertEquals(1, newPosition);
-    }
-
-    @Test
-    public void testMostLeft(){
-    	Assert.assertEquals(3, car.whereIs()[1]);
+        int [] arr1 = {14,5,-1,-1}; //for throwing exception
+        int [] arr2 = {1,4,-1,-1};
+        car.getPosition().setLane(2);
+        Assert.assertEquals(2,car.getPosition().getLane());
+    	Assert.assertEquals(0, car.leftLaneDetect(arr1, arr2));
     }
     
+    //TC11
     @Test
+    public void testNotEndOfStreet(){
+        int [] arr1 = {14,20,-1,-1}; //for throwing exception
+        int [] arr2 = {10,15,-1,-1};
+        car.getPosition().setLane(2);
+        car.getPosition().setPosition(50);
+        //Assert.assertEquals(2,car.getPosition().getLane());
+    	//Assert.assertEquals(false, car.leftLaneDetect(arr1, arr2));
+    	Assert.assertTrue(car.getPosition().getPosition() > 0 && car.getPosition().getPosition() < 96);
+        Assert.assertEquals(1, car.changeLane(arr1, arr2));
+    }
+    
+    //TC12
+    @Test
+    public void testEndOfStreet(){
+        int [] arr1 = {14,20,-1,-1}; //for throwing exception
+        int [] arr2 = {10,15,-1,-1};
+        car.getPosition().setLane(2);
+        car.getPosition().setPosition(98);
+        //Assert.assertEquals(2,car.getPosition().getLane());
+    	//Assert.assertEquals(false, car.leftLaneDetect(arr1, arr2));
+    	Assert.assertTrue(car.getPosition().getPosition() > 0 && car.getPosition().getPosition() < 96);
+    	Assert.assertEquals(-1, car.changeLane(arr1, arr2));
+    }
+    
     //TC13
+    @Test
+    public void testMostLeftInRange(){
+    	 int [] arr1 = {14,20,-1,-1}; //for throwing exception
+         int [] arr2 = {10,15,-1,-1};
+         car.getPosition().setLane(3);
+         car.getPosition().setPosition(50);
+         Assert.assertTrue(car.getPosition().getPosition() > 0 && car.getPosition().getPosition() < 96);
+         Assert.assertEquals(2,car.changeLane(arr1, arr2));
+    }
+    
+    //TC14
+    @Test
+    public void testMostLeftOutOfRange(){
+   	 int [] arr1 = {14,20,-1,-1}; //for throwing exception
+        int [] arr2 = {10,15,-1,-1};
+        car.getPosition().setLane(3);
+        car.getPosition().setPosition(98);
+        Assert.assertTrue(!(car.getPosition().getPosition() > 0 && car.getPosition().getPosition() < 96));
+        Assert.assertEquals(2,car.changeLane(arr1, arr2));
+   }
+    
+    @Test
+    //TC15
     public void testOnStreet(){
-    	int positionCarforw = car.whereIs()[0]; 
-    	int positionCarlan = car.whereIs()[1];
+    	int positionCarforw = car.whereIs()[1]; 
+    	int positionCarlan = car.whereIs()[0];
+    	car.getPosition().setPosition(50);
+    	car.getPosition().setLane(2);
   //  	Assert.assertEquals(50,positionCarforw);
     //	Assert.assertEquals(2,positionCarlan);
     	Assert.assertTrue(positionCarforw > 0 && positionCarforw <101);
@@ -139,14 +187,17 @@ public class CarTest {
     }
     
     @Test
-    //TC14
+    //TC16
     public void testNotStreet(){
-    	int positionCarforw = car.whereIs()[0];
-    	int positionCarlan = car.whereIs()[1];
+    	int positionCarforw = car.whereIs()[1];
+    	int positionCarlan = car.whereIs()[0];
+    	car.getPosition().setPosition(150);
+    	car.getPosition().setLane(4);
   //  	Assert.assertEquals(50,positionCarforw);
     //	Assert.assertEquals(2,positionCarlan);
-    	Assert.assertTrue(positionCarforw > 100);
-    	Assert.assertTrue(positionCarlan > 3);
+    	Assert.assertTrue(positionCarforw > 100 && positionCarforw < 0);
+    	Assert.assertTrue(positionCarlan > 3 && positionCarlan < 0);
     }
 
 }
+

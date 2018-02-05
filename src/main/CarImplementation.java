@@ -40,19 +40,30 @@ public class CarImplementation implements CarInterface{
     }
 
     @Override
-    public int changeLane() {
-    	
-        return 1;
+    public int changeLane(int[] arr1, int[] arr2) {
+    	boolean detect = leftLaneDetect(arr1,arr2);
+    	if(whereIs()[0] != 3 && detect == false ){
+    		moveForward();
+    		car.increaseLane();
+    		return 1;
+    	} else if(whereIs()[0] !=3 && detect == true){
+    		moveForward();
+    		return 0;
+    	} else if (whereIs()[0] == 3){
+    		moveForward();
+    		return 2;
+    	}
+        return -1;
     }
 
     @Override
     public int[] whereIs() {
-    	int road = (int) Math.floor(Math.random()* 101);
-    	int lane = (int) Math.floor(Math.random()* 3)+1;
-    	int[] random = new int[2];
-    	random[0] = road;
-    	random[1] = lane;
-		return random;
+    	int street = car.getPosition();
+    	int lane =car.getLane();
+    
+    	int[] position = {lane,street};
+    	
+		return position;
     }
 
 
