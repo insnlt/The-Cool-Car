@@ -91,7 +91,7 @@ public class CarTest {
 
     //TC10
     @Test
-    public void testNotMostLeft() throws DetectException{
+    public void testNotMostLeftOccupied() throws DetectException{
         int [] arr1 = {14,5,-1,-1}; //for throwing exception
         int [] arr2 = {1,4,-1,-1};
         car.getPosition().setLane(2);
@@ -101,7 +101,7 @@ public class CarTest {
     
     //TC11
     @Test
-    public void testNotEndOfStreet() throws DetectException{
+    public void testNotMostLeftNotOccupiedNotEndOfStreet() throws DetectException{
         int [] arr1 = {14,20,-1,-1}; //for throwing exception
         int [] arr2 = {10,15,-1,-1};
         car.getPosition().setLane(2);
@@ -112,7 +112,7 @@ public class CarTest {
     
     //TC12
     @Test
-    public void testEndOfStreet() throws DetectException{
+    public void testNotMostLeftNotOccupiedEndOfStreet() throws DetectException{
         int [] arr1 = {14,20,-1,-1}; 
         int [] arr2 = {10,15,-1,-1};
         car.getPosition().setLane(2);
@@ -123,7 +123,7 @@ public class CarTest {
     
     //TC13
     @Test
-    public void testMostLeftInRange() throws DetectException{
+    public void testMostLeftNotEndOfStreet() throws DetectException{
     	 int [] arr1 = {14,20,-1,-1};
          int [] arr2 = {10,15,-1,-1};
          car.getPosition().setLane(3);
@@ -134,7 +134,7 @@ public class CarTest {
     
     //TC14
     @Test
-    public void testMostLeftOutOfRange() throws DetectException{
+    public void testMostLeftEndOfStreet() throws DetectException{
    	 int [] arr1 = {14,20,-1,-1}; 
         int [] arr2 = {10,15,-1,-1};
         car.getPosition().setLane(3);
