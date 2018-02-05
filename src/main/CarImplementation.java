@@ -1,18 +1,18 @@
 package main;
 
-public class CarImplementation implements CarInterface{
-  //  private int position;
+public class CarImplementation implements CarInterface {
     private CarPosition car;
     private QueryResult result;
     public CarImplementation() {
         car = new CarPosition();
     }
+
     @Override
     public int moveForward() {
-        if(this.car.getPosition() >=96 || this.car.getPosition() < 0){
+        if(this.car.getPosition() >=96 || this.car.getPosition() < 0){  // TC1
             return this.car.getPosition();
         } else {
-            car.move();
+            car.move();         // TC0
             return this.car.getPosition();
         }
     }
@@ -27,18 +27,17 @@ public class CarImplementation implements CarInterface{
        boolean bool2 = q2.getQueryOutput();
 
         // if both queries have at least 1 sensor input in range(0-5)
-       if(bool1==bool2 && bool1){
+       if(bool1==bool2 && bool1){               //TC4 , TC5 and TC7
            return true;
-       } else if(bool1 == bool2 && !bool1 && res1 >= 2 && res2 >=2) {    // if both queries have at least 2 sensors input nothing in range(0-5)
-           return false;
-       } else if (res1 == 0 && res2 == 0) {
+       } else if(bool1 == bool2 && !bool1 && res1 >= 2 && res2 >=2) {    // TC6 and TC8
+           return false;        //if both queries have at least 2 sensors input nothing in range(0-5)
+       } else if (res1 == 0 && res2 == 0) {     // TC2
            throw new DetectException("No sensor working");
-       } else if(res1 < 2 || res2 < 2){
+       } else if(res1 < 2 || res2 < 2){         // TC3
            throw new DetectException("Only one of the sensors is working");
-       } else {
+       } else {                                 // TC9
            throw new DetectException("Queries didn't match");
        }
-       //return false;
     }
 
     @Override
@@ -46,37 +45,32 @@ public class CarImplementation implements CarInterface{
     	boolean detect;
 		try {
 			detect = leftLaneDetect(arr1,arr2);
-	    	if(whereIs()[0] != 3 && detect == false && whereIs()[1] < 96 && whereIs()[1] > 0 ){
+	    	if(whereIs()[0] != 3 && !detect && whereIs()[1] < 96 && whereIs()[1] > 0){         //TC11
 	    		moveForward();
 	    		car.increaseLane();
 	    		return 1;
-	    	} else if(whereIs()[0] !=3 && detect == true){
+	    	} else if(whereIs()[0] !=3 && detect){          //TC10
 	    		moveForward();
 	    		return 0;
-	    	} else if (whereIs()[0] == 3){
+	    	} else if (whereIs()[0] == 3 && whereIs()[1] < 96 && whereIs()[1] > 0){     //TC13
 	    		moveForward();
 	    		return 2;
 	    	}
-	    	return 3;
+	    	return 3;           //TC12 and TC14
 	    
 		} catch (DetectException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
 		}
 		return 3;
     }
 
     @Override
-    public int[] whereIs() {
+    public int[] whereIs() {            //TC15 and TC16
     	int street = car.getPosition();
     	int lane =car.getLane();
-    
     	int[] position = {lane,street};
-    	
 		return position;
     }
-
 
     public CarPosition getPosition() {
         return this.car;
@@ -86,24 +80,10 @@ public class CarImplementation implements CarInterface{
         return this.car.streetPosition;
     }
 
-    public QueryResult getResult() {
-        return this.result;
-    }
-
     public QueryResult checkQuery(int[] arr){
         result = new QueryResult();
         boolean check = false;
         int counter = 0;
-        // checks the sensors
-        /*
-        for(int i = 0 ; i < this.car.sensorData.length ; i++){
-            if(this.car.getSensorData()[i] >=0 && this.car.getSensorData()[i] <=50){
-                counter++;
-                if(this.car.getSensorData()[i]<=5){
-                    check = true;
-                }
-            }
-        }*/
 
         for(int i = 0; i<arr.length;i++){
             if(arr[i] >= 0 && arr[i]<=50){
@@ -113,16 +93,10 @@ public class CarImplementation implements CarInterface{
                 }
             }
         }
-
         result.setQueryOutput(check);
         result.setWorkingCounter(counter);
         return result;
-//        if(counter >=2 && !check){
-//            return check;
-//        } else if (counter >=1 && check){
-//            return check;
-//        }
-//        return check;
+
     }
 
 

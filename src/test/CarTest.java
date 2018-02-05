@@ -1,13 +1,11 @@
 package test;
 
 import main.CarImplementation;
-import main.CarInterface;
 import main.DetectException;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.experimental.theories.suppliers.TestedOn;
+
 
 
 public class CarTest {
@@ -108,8 +106,6 @@ public class CarTest {
         int [] arr2 = {10,15,-1,-1};
         car.getPosition().setLane(2);
         car.getPosition().setPosition(50);
-        //Assert.assertEquals(2,car.getPosition().getLane());
-    	//Assert.assertEquals(false, car.leftLaneDetect(arr1, arr2));
     	Assert.assertTrue(car.getPosition().getPosition() > 0 && car.getPosition().getPosition() < 96);
         Assert.assertEquals(1, car.changeLane(arr1, arr2));
     }
@@ -121,8 +117,6 @@ public class CarTest {
         int [] arr2 = {10,15,-1,-1};
         car.getPosition().setLane(2);
         car.getPosition().setPosition(98);
-        //Assert.assertEquals(2,car.getPosition().getLane());
-    	//Assert.assertEquals(false, car.leftLaneDetect(arr1, arr2));
     	Assert.assertTrue(!(car.getPosition().getPosition() > 0 && car.getPosition().getPosition() < 96));
     	Assert.assertEquals(3, car.changeLane(arr1, arr2));
     }
@@ -146,7 +140,7 @@ public class CarTest {
         car.getPosition().setLane(3);
         car.getPosition().setPosition(98);
         Assert.assertTrue(!(car.getPosition().getPosition() > 0 && car.getPosition().getPosition() < 96));
-        Assert.assertEquals(2,car.changeLane(arr1, arr2));
+        Assert.assertEquals(3,car.changeLane(arr1, arr2));
    }
     
     @Test
@@ -156,8 +150,6 @@ public class CarTest {
     	car.getPosition().setLane(2);
     	int positionCarforw = car.whereIs()[1]; 
     	int positionCarlan = car.whereIs()[0];
-  //  	Assert.assertEquals(50,positionCarforw);
-    //	Assert.assertEquals(2,positionCarlan);
     	Assert.assertTrue(positionCarforw > 0 && positionCarforw <101);
     	Assert.assertTrue(positionCarlan > 0 && positionCarlan < 4);
     }
@@ -169,8 +161,6 @@ public class CarTest {
     	car.getPosition().setLane(4);
     	int positionCarforw = car.whereIs()[1];
     	int positionCarlan = car.whereIs()[0];
-  //  	Assert.assertEquals(50,positionCarforw);
-    //	Assert.assertEquals(2,positionCarlan);
     	Assert.assertTrue(positionCarforw > 100 || positionCarforw < 0);
     	Assert.assertTrue(positionCarlan > 3 || positionCarlan < 0);
     }

@@ -1,10 +1,14 @@
 package main;
 
 public interface CarInterface {
-
+    /**
+    Description: This class holds the position of the car and updates the position after moving.
+    Pre-condition: Car is on the street and range is between 0-95 metres.
+    Post-condition: None.
+    Test-cases: None.
+     */
     class CarPosition{
         public int streetPosition;
-        public int [] sensorData = new int[4];
         public int lane;
 
         public int getPosition(){
@@ -16,14 +20,6 @@ public interface CarInterface {
         public void move(){
             this.streetPosition = this.streetPosition + 5 ;
         }
-        public void setSensorData(int data[]){
-            for(int i = 0 ; i < sensorData.length ; i++){
-                sensorData[i] = data[i];
-            }
-        }
-        public int[] getSensorData(){
-            return this.sensorData;
-        }
         public void setLane(int lane){
         	this.lane = lane;;
         }
@@ -34,7 +30,12 @@ public interface CarInterface {
         	this.lane++;
         }
     }
-
+    /**
+     Description: This class holds the results of the queries.
+     Pre-condition: Car is on the street and not in the leftmost lane.
+     Post-condition: None.
+     Test-cases: None.
+     */
     class QueryResult{
         public int workingCounter;
         public boolean queryOutput;
@@ -42,15 +43,12 @@ public interface CarInterface {
         public int getWorkingCounter(){
             return this.workingCounter;
         }
-
         public boolean getQueryOutput(){
             return this.queryOutput;
         }
-
         public void setQueryOutput(boolean queryOutput) {
             this.queryOutput = queryOutput;
         }
-
         public void setWorkingCounter(int workingCounter) {
             this.workingCounter = workingCounter;
         }
@@ -75,14 +73,14 @@ public interface CarInterface {
      otherwise the car moves 5 metres forward.
      Pre-condition: The car should not be in the left most lane.
      Post-condition: If the left lane is empty, the car switches the lane and returns a success code otherwise an error code is returned.
-     Test-cases: TC10,TC11,TC12,TC13
+     Test-cases: TC10,TC11,TC12,TC13,TC14
      */
     int changeLane(int[] arr1, int[] arr2);
     /**
      Description: The method returns the latitudinal and longitudinal position of the car.
      Pre-condition: The car is on the street.
      Post-condition: Returns current position of the car.
-     Test-cases: TC14,TC15
+     Test-cases: TC15,TC16
      */
-    int[] whereIs(); // change the return type
+    int[] whereIs();
 }
