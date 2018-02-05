@@ -26,9 +26,9 @@ public class CarImplementation implements CarInterface {
        boolean bool1 = q1.getQueryOutput();
        boolean bool2 = q2.getQueryOutput();
 
-        // if both queries have at least 1 sensor input in range(0-5)
+
        if(bool1==bool2 && bool1){               //TC4 , TC5 and TC7
-           return true;
+           return true;         // if both queries have at least 1 sensor input in range(0-5)
        } else if(bool1 == bool2 && !bool1 && res1 >= 2 && res2 >=2) {    // TC6 and TC8
            return false;        //if both queries have at least 2 sensors input nothing in range(0-5)
        } else if (res1 == 0 && res2 == 0) {     // TC2
