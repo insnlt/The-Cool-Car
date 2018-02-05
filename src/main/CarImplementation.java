@@ -46,7 +46,7 @@ public class CarImplementation implements CarInterface{
     	boolean detect;
 		try {
 			detect = leftLaneDetect(arr1,arr2);
-	    	if(whereIs()[0] != 3 && detect == false ){
+	    	if(whereIs()[0] != 3 && detect == false && whereIs()[1] < 96 && whereIs()[1] > 0 ){
 	    		moveForward();
 	    		car.increaseLane();
 	    		return 1;
@@ -57,13 +57,14 @@ public class CarImplementation implements CarInterface{
 	    		moveForward();
 	    		return 2;
 	    	}
-	    	return -1;
+	    	return 3;
 	    
 		} catch (DetectException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return -1;
+			
 		}
+		return 3;
     }
 
     @Override
