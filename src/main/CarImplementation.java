@@ -43,19 +43,27 @@ public class CarImplementation implements CarInterface{
 
     @Override
     public int changeLane(int[] arr1, int[] arr2) {
-    	boolean detect = leftLaneDetect(arr1,arr2);
-    	if(whereIs()[0] != 3 && detect == false ){
-    		moveForward();
-    		car.increaseLane();
-    		return 1;
-    	} else if(whereIs()[0] !=3 && detect == true){
-    		moveForward();
-    		return 0;
-    	} else if (whereIs()[0] == 3){
-    		moveForward();
-    		return 2;
-    	}
-        return -1;
+    	boolean detect;
+		try {
+			detect = leftLaneDetect(arr1,arr2);
+	    	if(whereIs()[0] != 3 && detect == false ){
+	    		moveForward();
+	    		car.increaseLane();
+	    		return 1;
+	    	} else if(whereIs()[0] !=3 && detect == true){
+	    		moveForward();
+	    		return 0;
+	    	} else if (whereIs()[0] == 3){
+	    		moveForward();
+	    		return 2;
+	    	}
+	    	return -1;
+	    
+		} catch (DetectException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return -1;
+		}
     }
 
     @Override
