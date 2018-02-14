@@ -1,4 +1,4 @@
-package main;
+package controller;
 
 /**
  *  This class handles exceptions and prints out the related message.

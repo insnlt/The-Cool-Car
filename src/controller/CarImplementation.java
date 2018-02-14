@@ -1,4 +1,4 @@
-package main;
+package controller;
 
 public class CarImplementation implements CarInterface {
     private CarPosition car;
