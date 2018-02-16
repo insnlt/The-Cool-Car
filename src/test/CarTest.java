@@ -1,17 +1,24 @@
 package test;
 
+import model.SensorInterface;
+import model.ActuatorInterface;
 import controller.CarImplementation;
 import controller.DetectException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito.*;
+import org.mockito.Mockito;
 
 
 public class CarTest {
     @Mock
-    private Sensor sensor;
-
+    private Sensor sensor1;
+    @Mock
+    private Sensor sensor2;
+    @Mock
+    private Sensor sensor3;
+    @Mock
+    private Sensor sensor4;
     @Mock
     private Actuator actuator;
 
@@ -20,7 +27,7 @@ public class CarTest {
 
     @Before
     public void setUp() {
-        car = new CarImplementation();
+        car = new CarImplementation(sensor1,sensor2,sensor3,sensor4,actuator);
     }
 
     @Test
@@ -43,7 +50,8 @@ public class CarTest {
     @Test(expected = DetectException.class)
     public void testNoSensorWorking() throws DetectException {
         int[] arr = {-1, -1, -1, -1};
-        car.leftLaneDetect(arr, arr);
+     //   car.leftLaneDetect(arr, arr);
+        car.leftLaneDetect();
         Assert.fail("No sensor working");
     }
 
@@ -52,7 +60,8 @@ public class CarTest {
     public void testSensorWorkingOutsideRange() throws DetectException {
         //more than 5 meter range
         int[] arr = {9, -1, -1, -1};
-        car.leftLaneDetect(arr, arr);
+      //  car.leftLaneDetect(arr, arr);
+        car.leftLaneDetect();
         Assert.fail("Only one of the sensors is working");
     }
 
@@ -60,21 +69,21 @@ public class CarTest {
     @Test
     public void testSensorWorkingInsideRange1() throws DetectException {
         int[] arr = {4, -1, -1, -1};
-        Assert.assertEquals(true, car.leftLaneDetect(arr, arr));
+        Assert.assertEquals(true, car.leftLaneDetect());
     }
 
     //TC5
     @Test
     public void testSensorWorkingInsideRange2() throws DetectException {
         int[] arr = {4, 3, 2, -1};
-        Assert.assertEquals(true, car.leftLaneDetect(arr, arr));
+        Assert.assertEquals(true, car.leftLaneDetect());
     }
 
     //TC6
     @Test
     public void testTwoOrMoreSensorWorkingOutsideRange() throws DetectException {
         int[] arr = {14, 11, -1, -1};
-        Assert.assertEquals(false, car.leftLaneDetect(arr, arr));
+        Assert.assertEquals(false, car.leftLaneDetect());
     }
 
     //TC7
@@ -82,7 +91,7 @@ public class CarTest {
     public void testQueriesMatchAsTrue() throws DetectException {
         int[] arr1 = {5, 14, -1, -1}; //for throwing exception
         int[] arr2 = {1, 3, 9, -1};
-        Assert.assertEquals(true, car.leftLaneDetect(arr1, arr2));
+        Assert.assertEquals(true, car.leftLaneDetect());
     }
 
     //TC8
@@ -90,7 +99,7 @@ public class CarTest {
     public void testQueriesMatchAsFalse() throws DetectException {
         int[] arr1 = {14, 14, -1, -1}; //for throwing exception
         int[] arr2 = {12, 13, 19, -1};
-        Assert.assertEquals(false, car.leftLaneDetect(arr1, arr2));
+        Assert.assertEquals(false, car.leftLaneDetect());
     }
 
     //TC9
@@ -98,7 +107,7 @@ public class CarTest {
     public void testQueriesMatchAsException() throws DetectException {
         int[] arr1 = {14, 14, -1, -1}; //for throwing exception
         int[] arr2 = {1, 3, 9, -1};
-        car.leftLaneDetect(arr1, arr2);
+        car.leftLaneDetect();
         Assert.fail("Queries didn't match");
     }
 
@@ -109,7 +118,7 @@ public class CarTest {
         int[] arr2 = {1, 4, -1, -1};
         car.getCar().setLane(2);
         Assert.assertEquals(2, car.getCar().getLane());
-        Assert.assertEquals(0, car.changeLane(arr1, arr2));
+        Assert.assertEquals(0, car.changeLane());
     }
 
     //TC11
@@ -120,7 +129,7 @@ public class CarTest {
         car.getCar().setLane(2);
         car.getCar().setPosition(50);
         Assert.assertTrue(car.getCar().getPosition() > 0 && car.getCar().getPosition() < 96);
-        Assert.assertEquals(1, car.changeLane(arr1, arr2));
+        Assert.assertEquals(1, car.changeLane());
     }
 
     //TC12
@@ -131,7 +140,7 @@ public class CarTest {
         car.getCar().setLane(2);
         car.getCar().setPosition(98);
         Assert.assertTrue(!(car.getCar().getPosition() > 0 && car.getCar().getPosition() < 96));
-        Assert.assertEquals(3, car.changeLane(arr1, arr2));
+        Assert.assertEquals(3, car.changeLane());
     }
 
     //TC13
@@ -142,7 +151,7 @@ public class CarTest {
         car.getCar().setLane(3);
         car.getCar().setPosition(50);
         Assert.assertTrue(car.getCar().getPosition() > 0 && car.getCar().getPosition() < 96);
-        Assert.assertEquals(2, car.changeLane(arr1, arr2));
+        Assert.assertEquals(2, car.changeLane());
     }
 
     //TC14
@@ -153,7 +162,7 @@ public class CarTest {
         car.getCar().setLane(3);
         car.getCar().setPosition(98);
         Assert.assertTrue(!(car.getCar().getPosition() > 0 && car.getCar().getPosition() < 96));
-        Assert.assertEquals(3, car.changeLane(arr1, arr2));
+        Assert.assertEquals(3, car.changeLane());
     }
 
     @Test

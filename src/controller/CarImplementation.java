@@ -1,9 +1,22 @@
 package controller;
 
+import model.SensorInterface;
+import model.ActuatorInterface;
+
 public class CarImplementation implements CarInterface {
     private CarPosition car;
     private QueryResult result;
-    public CarImplementation() {
+    private SensorInterface sensor1;
+    private SensorInterface sensor2;
+    private SensorInterface sensor3;
+    private SensorInterface sensor4;
+    private ActuatorInterface actuator;
+    public CarImplementation(SensorInterface sensor1,SensorInterface sensor2,SensorInterface sensor3,SensorInterface sensor4 , ActuatorInterface actuator) {
+        this.sensor1 = sensor1;
+        this.sensor2 = sensor2;
+        this.sensor3 = sensor3;
+        this.sensor4 = sensor4;
+        this.actuator = actuator;
         car = new CarPosition();
     }
 
@@ -12,15 +25,16 @@ public class CarImplementation implements CarInterface {
         if(this.car.getPosition() >=96 || this.car.getPosition() < 0){  // TC1  checks if the car is out of range
             return this.car.getPosition();
         } else {
-            car.move();         // TC0      moves the car when its within range
+            //car.move();         // TC0      moves the car when its within range
+            actuator.moveForward();
             return this.car.getPosition();
         }
     }
 
     @Override
-    public boolean leftLaneDetect(int[] arr1, int[] arr2) throws DetectException{
-       QueryResult q1 = checkQuery(arr1);
-       QueryResult q2 = checkQuery(arr2);
+    public boolean leftLaneDetect() throws DetectException{
+       QueryResult q1 = checkQuery();
+       QueryResult q2 = checkQuery();
        int res1 = q1.getWorkingCounter();
        int res2 = q2.getWorkingCounter();
        boolean bool1 = q1.getQueryOutput();
@@ -41,10 +55,10 @@ public class CarImplementation implements CarInterface {
     }
 
     @Override
-    public int changeLane(int[] arr1, int[] arr2) {
+    public int changeLane() {
     	boolean detect;
 		try {
-			detect = leftLaneDetect(arr1,arr2);
+			detect = leftLaneDetect();
 	    	if(whereIs()[0] != 3 && !detect && whereIs()[1] < 96 && whereIs()[1] > 0){         //TC11
 	    		moveForward();              // we check if the sensors doesn't detect anything and the car is not on the end of the street and the car is not in the leftmost lane
 	    		car.increaseLane();         // move forward and change the lane.
@@ -82,15 +96,21 @@ public class CarImplementation implements CarInterface {
     /*
         This method checks the query and returns the result contains information about the no. of sensor working and the output of those sensors.
      */
-    public QueryResult checkQuery(int[] arr){
+    public QueryResult checkQuery(){
+        int [] sensorData = new int[4];
+        sensorData[0] = sensor1.getSensorData();
+        sensorData[1] =sensor2.getSensorData();
+        sensorData[2] =sensor3.getSensorData();
+        sensorData[3] =sensor4.getSensorData();
+
         result = new QueryResult();
         boolean check = false;
         int counter = 0;
 
-        for(int i = 0; i<arr.length;i++){
-            if(arr[i] >= 0 && arr[i]<=50){
+        for(int i = 0; i<sensorData.length;i++){
+            if(sensorData[i] >= 0 && sensorData[i]<=50){
                 counter++;                              // checks if the sensor is working within range 0-50
-                if(arr[i]<=5){
+                if(sensorData[i]<=5){
                     check=true;                         // checks if the sensor detects something within the range of 0-5
                 }
             }
