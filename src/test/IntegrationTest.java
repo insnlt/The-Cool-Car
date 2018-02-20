@@ -36,7 +36,18 @@ public class IntegrationTest{
         sensor4 = Mockito.mock(SensorInterface.class);
         actuator = Mockito.mock(ActuatorInterface.class);
         car = new CarImplementation(sensor1,sensor2,sensor3,sensor4,actuator);
-        car.
+        car.getCar().setPosition(0);
+        MockitoAnnotations.initMocks(this);
     }
 
+    @Test
+    public void IntegrationTestScenario1(){
+    	for(int i = 0 ; i < 100; i++){
+    		Mockito.when(actuator.moveForward()).thenReturn(car.getCarPosition());
+    		car.getCar().move();
+    		car.changeLane();
+    	}
+    	Assert.assertEquals(100, car.getCarPosition());
+    	Assert.assertEquals(2, car.getCar().getLane());
+    }
 }

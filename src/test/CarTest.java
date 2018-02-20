@@ -7,20 +7,19 @@ import controller.DetectException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
-
+import org.mockito.Mock;
 
 public class CarTest {
     @Mock
-    private Sensor sensor1;
+    private SensorInterface sensor1;
     @Mock
-    private Sensor sensor2;
+    private SensorInterface sensor2;
     @Mock
-    private Sensor sensor3;
+    private SensorInterface sensor3;
     @Mock
-    private Sensor sensor4;
+    private SensorInterface sensor4;
     @Mock
-    private Actuator actuator;
+    private ActuatorInterface actuator;
 
     
     private CarImplementation car;

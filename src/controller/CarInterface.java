@@ -18,7 +18,7 @@ public interface CarInterface {
             this.streetPosition = streetPosition;
         }
         public void move(){
-            this.streetPosition = this.streetPosition + 5 ;
+            this.streetPosition++;
         }
         public void setLane(int lane){
         	this.lane = lane;;
