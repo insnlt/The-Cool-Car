@@ -7,6 +7,7 @@ public interface SensorInterface {
      Post-condition: None.
      Test-cases: None.
      */
-    public int getSensorData();
+  //  public int getSensorData(int position);
+    public int setSensorData(int value);
 
 }

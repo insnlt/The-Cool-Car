@@ -1,5 +1,7 @@
 package model;
 
+import controller.CarInterface;
+
 public interface ActuatorInterface {
     /**
      Description: This class holds the results of the queries.
@@ -7,5 +9,5 @@ public interface ActuatorInterface {
      Post-condition: None.
      Test-cases: None.
      */
-    public int moveForward();
+    public CarInterface.CarPosition moveForward();
 }

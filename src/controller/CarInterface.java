@@ -2,10 +2,10 @@ package controller;
 
 public interface CarInterface {
     /**
-    Description: This class holds the position of the car and updates the position after moving.
-    Pre-condition: Car is on the street and range is between 0-95 metres.
-    Post-condition: None.
-    Test-cases: None.
+     Description: This class holds the position of the car and updates the position after moving.
+     Pre-condition: Car is on the street and range is between 0-95 metres.
+     Post-condition: None.
+     Test-cases: None.
      */
     class CarPosition{
         public int streetPosition;
@@ -18,16 +18,16 @@ public interface CarInterface {
             this.streetPosition = streetPosition;
         }
         public void move(){
-            this.streetPosition++;
+            this.streetPosition = this.streetPosition + 5 ;
         }
         public void setLane(int lane){
-        	this.lane = lane;;
+            this.lane = lane;;
         }
         public int getLane() {
-        	return this.lane;
+            return this.lane;
         }
         public void increaseLane(){
-        	this.lane++;
+            this.lane++;
         }
     }
     /**

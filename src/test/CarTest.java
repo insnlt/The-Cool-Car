@@ -7,7 +7,7 @@ import controller.DetectException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
+import org.mockito.*;
 
 public class CarTest {
     @Mock
@@ -21,7 +21,7 @@ public class CarTest {
     @Mock
     private ActuatorInterface actuator;
 
-    
+
     private CarImplementation car;
 
     @Before
@@ -49,7 +49,7 @@ public class CarTest {
     @Test(expected = DetectException.class)
     public void testNoSensorWorking() throws DetectException {
         int[] arr = {-1, -1, -1, -1};
-     //   car.leftLaneDetect(arr, arr);
+        //   car.leftLaneDetect(arr, arr);
         car.leftLaneDetect();
         Assert.fail("No sensor working");
     }
@@ -59,7 +59,7 @@ public class CarTest {
     public void testSensorWorkingOutsideRange() throws DetectException {
         //more than 5 meter range
         int[] arr = {9, -1, -1, -1};
-      //  car.leftLaneDetect(arr, arr);
+        //  car.leftLaneDetect(arr, arr);
         car.leftLaneDetect();
         Assert.fail("Only one of the sensors is working");
     }
