@@ -168,13 +168,13 @@ public class IntegrationTest{
             } else {
                 Mockito.when(sensor1.setSensorData(i)).thenReturn(diffBtwCars * -1);
                 Mockito.when(sensor2.setSensorData(i)).thenReturn(diffBtwCars * -15);
-                Mockito.when(sensor3.setSensorData(i)).thenReturn(diffBtwCars + 2);
+                Mockito.when(sensor3.setSensorData(i)).thenReturn(diffBtwCars * -2);
                 Mockito.when(sensor4.setSensorData(i)).thenReturn(diffBtwCars + 4);
             }
         }
         car.changeLane();
-        Assert.assertEquals(2,car.getCar().getLane());
-        for(int i=0; i < 9 ; i++){
+        Assert.assertEquals(1,car.getCar().getLane());
+        for(int i=0; i < 10 ; i++){
             Mockito.when(actuator.moveForward()).thenReturn(car.getCar());
             actuator.moveForward().move();
         }
@@ -199,7 +199,7 @@ public class IntegrationTest{
                 Mockito.when(sensor4.setSensorData(i)).thenReturn(diffBtwCars + 4);
             } else {
                 Mockito.when(sensor1.setSensorData(i)).thenReturn(diffBtwCars);
-                Mockito.when(sensor2.setSensorData(i)).thenReturn(diffBtwCars * -15);
+                Mockito.when(sensor2.setSensorData(i)).thenReturn(diffBtwCars + 2);
                 Mockito.when(sensor3.setSensorData(i)).thenReturn(diffBtwCars * -2);
                 Mockito.when(sensor4.setSensorData(i)).thenReturn(diffBtwCars * -4);
             }
