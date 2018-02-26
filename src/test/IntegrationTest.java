@@ -273,8 +273,10 @@ public class IntegrationTest{
         }
         car.changeLane();
         Assert.assertEquals(3,car.getCar().getLane());
+        car.changeLane();
+        Assert.assertEquals(3,car.getCar().getLane());
 
-        moveCars(3);
+        moveCars(2);
         Assert.assertEquals(100,car.getCarPosition());
 
 
