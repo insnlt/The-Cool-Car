@@ -79,11 +79,6 @@ public class IntegrationTest{
             Mockito.when(sensor2.setSensorData(i)).thenReturn(diffBtwCars + 2);
             Mockito.when(sensor3.setSensorData(i)).thenReturn(diffBtwCars + 2);
             Mockito.when(sensor4.setSensorData(i)).thenReturn(diffBtwCars + 4);
-            System.out.println(sensor1.setSensorData(i));
-            System.out.println(sensor2.setSensorData(i));
-            System.out.println(sensor3.setSensorData(i));
-            System.out.println(sensor4.setSensorData(i));
-
         }
         car.changeLane();
         Assert.assertEquals(2,car.getCar().getLane());

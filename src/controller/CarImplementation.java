@@ -65,14 +65,14 @@ public class CarImplementation implements CarInterface {
         try {
             detect = leftLaneDetect();
             if(whereIs()[0] != 3 && !detect && whereIs()[1] < 96 && whereIs()[1] > 0){         //TC11
-                moveForward();              // we check if the sensors doesn't detect anything and the car is not on the end of the street and the car is not in the leftmost lane
+                car.move();              // we check if the sensors doesn't detect anything and the car is not on the end of the street and the car is not in the leftmost lane
                 car.increaseLane();         // move forward and change the lane.
                 return 1;
             } else if(whereIs()[0] !=3 && detect){          //TC10
-                moveForward();              // we check if the car is not in the leftmost lane but it detects something , we just move forward and dont change the lane.
+                car.move();              // we check if the car is not in the leftmost lane but it detects something , we just move forward and dont change the lane.
                 return 0;
             } else if (whereIs()[0] == 3 && whereIs()[1] < 96 && whereIs()[1] > 0){     //TC13
-                moveForward();              // we check if the car is in the leftmost lane and not on the end of the street , just move forward.
+                car.move();              // we check if the car is in the leftmost lane and not on the end of the street , just move forward.
                 return 2;
             }
             return 3;           //TC12 and TC14
