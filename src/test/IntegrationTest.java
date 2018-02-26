@@ -39,12 +39,12 @@ public class IntegrationTest{
         sensor4 = Mockito.mock(SensorInterface.class);
         actuator = Mockito.mock(ActuatorInterface.class);
         car = new CarImplementation(sensor1,sensor2,sensor3,sensor4,actuator);
-        randomCar1 = new CarImplementation();
-        randomCar2 = new CarImplementation();
-        randomCar3 = new CarImplementation();
-        randomCar4 = new CarImplementation();
-        randomCar5 = new CarImplementation();
-        randomCar6 = new CarImplementation();
+        randomCar1 = new CarImplementation(2);
+        randomCar2 = new CarImplementation(2);
+        randomCar3 = new CarImplementation(2);
+        randomCar4 = new CarImplementation(3);
+        randomCar5 = new CarImplementation(3);
+        randomCar6 = new CarImplementation(3);
         car.getCar().setLane(1);
         MockitoAnnotations.initMocks(this);
     }
@@ -63,15 +63,12 @@ public class IntegrationTest{
         }
     }
 
-    // There are 3 random cars in the middle lane and our car is on the rightmost lane. We move our car a few times and issue ChangeLane,
-    // it checks the sensor data and if the lane is empty, it changes lane and moves to the end of the street.
     @Test
     public void IntegrationTestScenario1(){
 
         randomCar1.getRandomCar().setPosition(20);
         randomCar2.getRandomCar().setPosition(40);
         randomCar3.getRandomCar().setPosition(60);
-
         moveCars(10);
 
         Assert.assertEquals(50, car.getCarPosition());
@@ -82,6 +79,10 @@ public class IntegrationTest{
             Mockito.when(sensor2.setSensorData(i)).thenReturn(diffBtwCars + 2);
             Mockito.when(sensor3.setSensorData(i)).thenReturn(diffBtwCars + 2);
             Mockito.when(sensor4.setSensorData(i)).thenReturn(diffBtwCars + 4);
+            System.out.println(sensor1.setSensorData(i));
+            System.out.println(sensor2.setSensorData(i));
+            System.out.println(sensor3.setSensorData(i));
+            System.out.println(sensor4.setSensorData(i));
 
         }
         car.changeLane();
@@ -90,10 +91,10 @@ public class IntegrationTest{
         for(int i=0; i<9 ; i++){
             Mockito.when(actuator.moveForward()).thenReturn(car.getCar());
             actuator.moveForward().move();
-//            System.out.println(car.getCarPosition());
         }
         Assert.assertEquals(100, car.getCarPosition());
     }
+
     @Test
     public void IntegrationTestScenario2(){
         randomCar1.getRandomCar().setPosition(5);
@@ -137,15 +138,12 @@ public class IntegrationTest{
             Mockito.when(sensor3.setSensorData(i)).thenReturn(diffBtwCars + 2);
             Mockito.when(sensor4.setSensorData(i)).thenReturn(diffBtwCars + 4);
         }
-       // System.out.println(car.getCarPosition());
         car.changeLane();
-       // System.out.println(car.getCarPosition());
         Assert.assertEquals(1,car.getCar().getLane());
 
         for(int i=0; i < 9 ; i++){
             Mockito.when(actuator.moveForward()).thenReturn(car.getCar());
             actuator.moveForward().move();
-          //  System.out.println(car.getCarPosition());
         }
         Assert.assertEquals(100, car.getCarPosition());
 
@@ -167,19 +165,11 @@ public class IntegrationTest{
                 Mockito.when(sensor2.setSensorData(i)).thenReturn(diffBtwCars + 2);
                 Mockito.when(sensor3.setSensorData(i)).thenReturn(diffBtwCars + 2);
                 Mockito.when(sensor4.setSensorData(i)).thenReturn(diffBtwCars + 4);
-                System.out.println(sensor1.setSensorData(i));
-                System.out.println(sensor2.setSensorData(i));
-                System.out.println(sensor3.setSensorData(i));
-                System.out.println(sensor4.setSensorData(i));
             } else {
                 Mockito.when(sensor1.setSensorData(i)).thenReturn(diffBtwCars * -1);
                 Mockito.when(sensor2.setSensorData(i)).thenReturn(diffBtwCars * -15);
                 Mockito.when(sensor3.setSensorData(i)).thenReturn(diffBtwCars + 2);
                 Mockito.when(sensor4.setSensorData(i)).thenReturn(diffBtwCars + 4);
-                System.out.println(sensor1.setSensorData(i));
-                System.out.println(sensor2.setSensorData(i));
-                System.out.println(sensor3.setSensorData(i));
-                System.out.println(sensor4.setSensorData(i));
             }
         }
         car.changeLane();
@@ -187,7 +177,6 @@ public class IntegrationTest{
         for(int i=0; i < 9 ; i++){
             Mockito.when(actuator.moveForward()).thenReturn(car.getCar());
             actuator.moveForward().move();
-            //  System.out.println(car.getCarPosition());
         }
         Assert.assertEquals(100, car.getCarPosition());
     }
@@ -208,19 +197,11 @@ public class IntegrationTest{
                 Mockito.when(sensor2.setSensorData(i)).thenReturn(diffBtwCars + 2);
                 Mockito.when(sensor3.setSensorData(i)).thenReturn(diffBtwCars + 2);
                 Mockito.when(sensor4.setSensorData(i)).thenReturn(diffBtwCars + 4);
-                System.out.println(sensor1.setSensorData(i));
-                System.out.println(sensor2.setSensorData(i));
-                System.out.println(sensor3.setSensorData(i));
-                System.out.println(sensor4.setSensorData(i));
             } else {
                 Mockito.when(sensor1.setSensorData(i)).thenReturn(diffBtwCars);
                 Mockito.when(sensor2.setSensorData(i)).thenReturn(diffBtwCars * -15);
                 Mockito.when(sensor3.setSensorData(i)).thenReturn(diffBtwCars * -2);
                 Mockito.when(sensor4.setSensorData(i)).thenReturn(diffBtwCars * -4);
-                System.out.println(sensor1.setSensorData(i));
-                System.out.println(sensor2.setSensorData(i));
-                System.out.println(sensor3.setSensorData(i));
-                System.out.println(sensor4.setSensorData(i));
             }
         }
         car.changeLane();
@@ -228,7 +209,6 @@ public class IntegrationTest{
         for(int i=0; i < 9 ; i++){
             Mockito.when(actuator.moveForward()).thenReturn(car.getCar());
             actuator.moveForward().move();
-            //  System.out.println(car.getCarPosition());
         }
         Assert.assertEquals(100, car.getCarPosition());
     }
@@ -254,7 +234,6 @@ public class IntegrationTest{
         for(int i=0; i < 10 ; i++){
             Mockito.when(actuator.moveForward()).thenReturn(car.getCar());
             actuator.moveForward().move();
-            //  System.out.println(car.getCarPosition());
         }
         Assert.assertEquals(100, car.getCarPosition());
 
@@ -300,4 +279,5 @@ public class IntegrationTest{
 
 
     }
+
 }

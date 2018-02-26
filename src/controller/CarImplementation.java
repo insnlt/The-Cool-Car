@@ -20,8 +20,9 @@ public class CarImplementation implements CarInterface {
         this.actuator = actuator;
         car = new CarPosition();
     }
-    public CarImplementation(){
+    public CarImplementation(int lane){
         randomCar = new CarPosition();
+        randomCar.lane = lane;
     }
 
     @Override

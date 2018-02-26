@@ -12,27 +12,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="DetectException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/DetectException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding>
-                <element signature="e#190#191#0" expanded="true" />
-                <element signature="e#220#221#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CarImplementation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/CarImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="137" column="15" lean-forward="false" selection-start-line="137" selection-start-column="15" selection-end-line="137" selection-end-column="15" />
+            <state relative-caret-position="694">
+              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1519403921640" expanded="true" signature="5828:5834" ph="{...}" />
+                <marker date="1519649148847" expanded="true" signature="5867:5873" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -41,8 +28,8 @@
       <file leaf-file-name="IntegrationTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/IntegrationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="302" column="1" lean-forward="true" selection-start-line="302" selection-start-column="1" selection-end-line="302" selection-end-column="1" />
+            <state relative-caret-position="-5075">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="24" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,9 +52,12 @@
       <file leaf-file-name="CarInterface.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/CarInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-              <folding />
+            <state relative-caret-position="-504">
+              <caret line="22" column="20" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+              <folding>
+                <element signature="e#511#512#0" expanded="true" />
+                <element signature="e#571#572#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,8 +65,8 @@
       <file leaf-file-name="SensorInterface.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/SensorInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+            <state relative-caret-position="252">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -97,8 +87,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -129,8 +119,9 @@
         <option value="$PROJECT_DIR$/src/test/Mock.java" />
         <option value="$PROJECT_DIR$/src/test/CarTest.java" />
         <option value="$PROJECT_DIR$/src/model/ActuatorInterface.java" />
-        <option value="$PROJECT_DIR$/src/model/SensorInterface.java" />
         <option value="$PROJECT_DIR$/src/controller/CarImplementation.java" />
+        <option value="$PROJECT_DIR$/src/model/SensorInterface.java" />
+        <option value="$PROJECT_DIR$/src/test/IntegrationInterface.java" />
         <option value="$PROJECT_DIR$/src/test/IntegrationTest.java" />
       </list>
     </option>
@@ -141,10 +132,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="952" />
-    <option name="width" value="976" />
-    <option name="height" value="1038" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
+    <option name="width" value="1472" />
+    <option name="height" value="1309" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -252,6 +243,31 @@
       <module name="" />
       <envs />
     </configuration>
+    <configuration name="IntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="TAV_1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.IntegrationTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration name="IntegrationTest.IntegrationScenario6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -277,7 +293,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="IntegrationTest.IntegrationTestScenario3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IntegrationTest.IntegrationTestScenario1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="test.*" />
@@ -289,32 +305,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.IntegrationTest" />
-      <option name="METHOD_NAME" value="IntegrationTestScenario3" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="IntegrationTest.IntegrationTestScenario4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="TAV_1" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.IntegrationTest" />
-      <option name="METHOD_NAME" value="IntegrationTestScenario4" />
+      <option name="METHOD_NAME" value="IntegrationTestScenario1" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -438,19 +429,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.IntegrationTest.IntegrationTestScenario3" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.IntegrationTest.IntegrationTestScenario4" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.IntegrationTest.IntegrationTestScenario5" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.IntegrationTest.IntegrationScenario6" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.IntegrationTest.IntegrationTestScenario7" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.IntegrationTest.IntegrationTestScenario5" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.IntegrationTest.IntegrationScenario6" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.IntegrationTest.IntegrationTestScenario7" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.IntegrationTest.IntegrationTestScenario1" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.IntegrationTest" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.IntegrationTest.IntegrationTestScenario7" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.IntegrationTest.IntegrationScenario6" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.IntegrationTest.IntegrationTestScenario5" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.IntegrationTest.IntegrationTestScenario4" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.IntegrationTest.IntegrationTestScenario3" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.IntegrationTest.IntegrationTestScenario1" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.IntegrationTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.IntegrationTest.IntegrationScenario6" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.IntegrationTest.IntegrationTestScenario5" />
       </list>
     </recent_temporary>
   </component>
@@ -500,7 +491,7 @@
       <workItem from="1519380944191" duration="15530000" />
       <workItem from="1519505755030" duration="120000" />
       <workItem from="1519506979273" duration="160000" />
-      <workItem from="1519639489880" duration="6386000" />
+      <workItem from="1519639489880" duration="16411000" />
     </task>
     <task id="LOCAL-00001" summary="lala">
       <created>1517305106671</created>
@@ -513,29 +504,26 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="IntegrationTest_IntegrationScenario6 - 2018.02.26 at 12h 17m 33s.xml">
-      <configuration name="IntegrationTest.IntegrationScenario6" configurationId="JUnit" />
+    <history-entry file="IntegrationTest - 2018.02.26 at 16h 23m 25s.xml">
+      <configuration name="IntegrationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntegrationTest_IntegrationScenario6 - 2018.02.26 at 12h 17m 48s.xml">
-      <configuration name="IntegrationTest.IntegrationScenario6" configurationId="JUnit" />
+    <history-entry file="IntegrationTest_IntegrationTestScenario1 - 2018.02.26 at 13h 25m 27s.xml">
+      <configuration name="IntegrationTest.IntegrationTestScenario1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntegrationTest_IntegrationScenario6 - 2018.02.26 at 12h 18m 52s.xml">
-      <configuration name="IntegrationTest.IntegrationScenario6" configurationId="JUnit" />
+    <history-entry file="IntegrationTest_IntegrationTestScenario1 - 2018.02.26 at 13h 25m 50s.xml">
+      <configuration name="IntegrationTest.IntegrationTestScenario1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntegrationTest_IntegrationScenario6 - 2018.02.26 at 12h 19m 17s.xml">
-      <configuration name="IntegrationTest.IntegrationScenario6" configurationId="JUnit" />
+    <history-entry file="IntegrationTest_IntegrationTestScenario1 - 2018.02.26 at 13h 26m 30s.xml">
+      <configuration name="IntegrationTest.IntegrationTestScenario1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntegrationTest_IntegrationScenario6 - 2018.02.26 at 12h 20m 07s.xml">
-      <configuration name="IntegrationTest.IntegrationScenario6" configurationId="JUnit" />
+    <history-entry file="IntegrationTest_IntegrationTestScenario1 - 2018.02.26 at 15h 32m 06s.xml">
+      <configuration name="IntegrationTest.IntegrationTestScenario1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntegrationTest_IntegrationTestScenario7 - 2018.02.26 at 12h 40m 50s.xml">
-      <configuration name="IntegrationTest.IntegrationTestScenario7" configurationId="JUnit" />
+    <history-entry file="IntegrationTest_IntegrationTestScenario1 - 2018.02.26 at 16h 23m 54s.xml">
+      <configuration name="IntegrationTest.IntegrationTestScenario1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntegrationTest_IntegrationTestScenario7 - 2018.02.26 at 12h 42m 15s.xml">
-      <configuration name="IntegrationTest.IntegrationTestScenario7" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IntegrationTest_IntegrationTestScenario7 - 2018.02.26 at 12h 42m 50s.xml">
-      <configuration name="IntegrationTest.IntegrationTestScenario7" configurationId="JUnit" />
+    <history-entry file="IntegrationTest_IntegrationTestScenario1 - 2018.02.26 at 16h 24m 56s.xml">
+      <configuration name="IntegrationTest.IntegrationTestScenario1" configurationId="JUnit" />
     </history-entry>
     <history-entry file="IntegrationTest_IntegrationTestScenario7 - 2018.02.26 at 12h 43m 29s.xml">
       <configuration name="IntegrationTest.IntegrationTestScenario7" configurationId="JUnit" />
@@ -543,9 +531,12 @@
     <history-entry file="IntegrationTest_IntegrationTestScenario7 - 2018.02.26 at 12h 43m 41s.xml">
       <configuration name="IntegrationTest.IntegrationTestScenario7" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="IntegrationTest_IntegrationTestScenario7 - 2018.02.26 at 17h 43m 46s.xml">
+      <configuration name="IntegrationTest.IntegrationTestScenario7" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105583000" />
+    <option name="totallyTimeSpent" value="115608000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -557,7 +548,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="2418" height="1318" extended-state="7" />
+    <frame x="-9" y="-9" width="2418" height="1318" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -569,7 +560,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4334086" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.1670429" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46638298" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24510638" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -641,7 +632,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/CarInterface.java" />
     <entry file="file://$PROJECT_DIR$/src/CarInterface.java" />
-    <entry file="file://$PROJECT_DIR$/src/CarInterface.java" />
     <entry file="file://$PROJECT_DIR$/src/main/goForward.java" />
     <entry file="file://$PROJECT_DIR$/src/CarImplementation.java" />
     <entry file="file://$PROJECT_DIR$/src/CarInterface.java" />
@@ -653,7 +643,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="31" column="11" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
-          <folding />
+          <folding>
+            <element signature="e#511#512#0" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -663,7 +656,7 @@
           <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1519403921640" expanded="true" signature="5828:5834" ph="{...}" />
+            <marker date="1519649148847" expanded="true" signature="5867:5873" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -682,7 +675,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding />
+          <folding>
+            <element signature="e#511#512#0" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -692,7 +688,7 @@
           <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1519403921640" expanded="true" signature="5828:5834" ph="{...}" />
+            <marker date="1519649148847" expanded="true" signature="5867:5873" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -711,7 +707,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding />
+          <folding>
+            <element signature="e#511#512#0" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -731,7 +730,7 @@
           <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1519403921640" expanded="true" signature="5828:5834" ph="{...}" />
+            <marker date="1519649148847" expanded="true" signature="5867:5873" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -740,7 +739,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="23" column="7" lean-forward="false" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-          <folding />
+          <folding>
+            <element signature="e#511#512#0" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -760,7 +762,7 @@
           <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1519403921640" expanded="true" signature="5828:5834" ph="{...}" />
+            <marker date="1519649148847" expanded="true" signature="5867:5873" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -770,7 +772,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="e#511#512#0" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -789,7 +794,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="e#511#512#0" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -845,16 +853,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/SensorInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/CarInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+        <state relative-caret-position="252">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -870,21 +870,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/CarInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-504">
+          <caret line="22" column="20" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+          <folding>
+            <element signature="e#511#512#0" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/IntegrationInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/CarImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="137" column="15" lean-forward="false" selection-start-line="137" selection-start-column="15" selection-end-line="137" selection-end-column="15" />
+        <state relative-caret-position="694">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1519403921640" expanded="true" signature="5828:5834" ph="{...}" />
+            <marker date="1519649148847" expanded="true" signature="5867:5873" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/IntegrationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="302" column="1" lean-forward="true" selection-start-line="302" selection-start-column="1" selection-end-line="302" selection-end-column="1" />
+        <state relative-caret-position="-5075">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
